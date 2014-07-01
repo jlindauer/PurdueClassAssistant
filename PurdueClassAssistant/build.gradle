@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.9.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.commonsware.com.s3.amazonaws.com"
+    }
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 19
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:+'
+    compile 'com.commonsware.cwac:merge:1.0.1'
+    compile files('libs/jsoup-1.7.3.jar')
+}
